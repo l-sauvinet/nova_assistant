@@ -101,16 +101,33 @@ whenever `needs_account` is true), the chat (`ChatScreen` + `useChat.ts`), and t
 (`components/files/`). Conversation list grouping/titles, path helpers, and tool-call labels each have
 their own small `lib/*.ts` module with a matching `*.test.ts`.
 
-## Packaging status
+## Packaging and release status
 
-Done: standalone engine (PyInstaller), bundled into an NSIS installer by `npm run app:build` (Rust + MSVC
-installed on the build machine). If a frozen-engine feature breaks at runtime with `ModuleNotFoundError` or a
-missing data file, add the package to `COLLECT_ALL` in `packaging/build_engine.py`.
+Done:
+- Standalone engine (PyInstaller), bundled into an NSIS installer by `npm run app:build`. If a frozen-engine
+  feature breaks at runtime with `ModuleNotFoundError` or a missing data file, add the package to `COLLECT_ALL`
+  in `packaging/build_engine.py`. Tested on a Windows 10 PC without Python/uv/Rust: installs and starts.
+- Releases (`.github/workflows/release.yml`): pushing a tag `vX.Y.Z` that matches the version in
+  `desktop/src-tauri/tauri.conf.json` (keep `desktop/package.json` and `desktop/src-tauri/Cargo.toml` in sync) builds
+  the installer on GitHub Actions and creates a **draft** release with `NOVA_X.Y.Z_x64-setup.exe`, its `.sha256`, and
+  the same installer as `NOVA-setup.exe`. Publish the draft by hand. v0.1.0 is published (unsigned).
+- Website (`site/`, static, French + `en/`): https://nova.sauv-web.fr, hosted on o2switch. `.github/workflows/site.yml`
+  uploads it over FTPS on every push to `site/` (secrets `SITE_FTP_SERVER` / `SITE_FTP_USERNAME` /
+  `SITE_FTP_PASSWORD`, FTP account restricted to the subdomain folder). The download button points at
+  `releases/latest/download/NOVA-setup.exe`, so never drop that stable-name asset from releases. The site makes no
+  third-party requests (self-hosted fonts, strict CSP in `site/.htaccess`): keep it that way, the privacy section says so.
+- Public identity: copyright holder and site signature are "Sauv'Web"; commits use `sauv.web@gmail.com`. The old
+  private history (with personal data) lives only in the local branch `sauvegarde/historique-prive` and the private
+  repo `l-sauvinet/nova` (remote `ancien-prive`): never push or publish them. Keep tests free of personal data.
 
 Remaining:
-1. Test the installer on a machine without Python/uv/Rust pre-installed.
-2. Code signing (unsigned installers trigger Windows SmartScreen) — can wait for v1.
-3. Host the download (GitHub Releases — repo lives at `github.com/l-sauvinet/nova_assistant`).
+1. Code signing: SignPath Foundation application sent on 2026-10-08 (project "NOVA Assistant"), waiting for their
+   answer by email. Once accepted: link the repo in SignPath, add their signing step to `release.yml` (API token as a
+   GitHub secret), add "Free code signing provided by SignPath.io, certificate by SignPath Foundation" to the site's
+   "Code signing policy" section, then ship v0.1.1 signed. Until then, installers trigger Windows SmartScreen.
+2. Auto-update (Tauri updater with its own signing key, independent of SignPath), so v0.1.0 users get new versions.
+3. 13 Python tests fail on native Windows (WSL-only code paths + 2 others); mark them `skipif` before running
+   `pytest` in CI.
 
 Product constraint that stays true regardless of packaging: NOVA's default provider (`claude_code`) needs
 each user to have the Claude Code CLI installed and signed in themselves — there's no way around this for
