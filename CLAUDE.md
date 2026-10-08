@@ -116,6 +116,7 @@ Done:
   `SITE_FTP_PASSWORD`, FTP account restricted to the subdomain folder). The download button points at
   `releases/latest/download/NOVA-setup.exe`, so never drop that stable-name asset from releases. The site makes no
   third-party requests (self-hosted fonts, strict CSP in `site/.htaccess`): keep it that way, the privacy section says so.
+  `site/google728c38d6d785ad63.html` is the Google Search Console ownership proof: never delete it.
 - Public identity: copyright holder and site signature are "Sauv'Web"; commits use `sauv.web@gmail.com`. The old
   private history (with personal data) lives only in the local branch `sauvegarde/historique-prive` and the private
   repo `l-sauvinet/nova` (remote `ancien-prive`): never push or publish them. Keep tests free of personal data.
