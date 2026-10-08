@@ -1,0 +1,37 @@
+# Publishes site/ to nova.sauv-web.fr (o2switch) over FTPS whenever it changes on main.
+#
+# Needs three repository secrets (Settings > Secrets and variables > Actions):
+#   SITE_FTP_SERVER    e.g. the o2switch server name shown in cPanel (ftp.sauv-web.fr works too)
+#   SITE_FTP_USERNAME  an FTP account restricted to the nova.sauv-web.fr folder
+#   SITE_FTP_PASSWORD
+
+name: Site
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", ".github/workflows/site.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload site/ to o2switch
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SITE_FTP_SERVER }}
+          username: ${{ secrets.SITE_FTP_USERNAME }}
+          password: ${{ secrets.SITE_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./site/
+          server-dir: ./

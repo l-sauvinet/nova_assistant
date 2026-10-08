@@ -71,7 +71,11 @@ jobs:
           name=$(basename "$installer")
           sha=$(sha256sum "$installer" | cut -d' ' -f1)
           echo "$sha  $name" > "$installer.sha256"
+          # Same file under a name that never changes: the website's download button points at
+          # releases/latest/download/NOVA-setup.exe, which always serves the newest version.
+          cp "$installer" "$(dirname "$installer")/NOVA-setup.exe"
           echo "path=$installer" >> "$GITHUB_OUTPUT"
+          echo "stable=$(dirname "$installer")/NOVA-setup.exe" >> "$GITHUB_OUTPUT"
           echo "name=$name" >> "$GITHUB_OUTPUT"
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
 
@@ -92,6 +96,7 @@ jobs:
           files: |
             ${{ steps.installer.outputs.path }}
             ${{ steps.installer.outputs.path }}.sha256
+            ${{ steps.installer.outputs.stable }}
           body: |
             ## Installer NOVA sur Windows 10 / 11 (64 bits)
 

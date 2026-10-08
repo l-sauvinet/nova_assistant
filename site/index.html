@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOVA — ton assistant IA sur ton PC</title>
+  <meta name="description" content="NOVA est un assistant IA gratuit et open source pour Windows : il range tes fichiers, lance des commandes avec ton accord, cherche sur le web et crée des documents.">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="alternate" hreflang="fr" href="https://nova.sauv-web.fr/">
+  <link rel="alternate" hreflang="en" href="https://nova.sauv-web.fr/en/">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#">
+        <span class="orb orb-small" aria-hidden="true"><span class="orb-glow"></span><span class="orb-core"></span><span class="orb-swirl"></span><span class="orb-shine"></span></span>
+        NOVA
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="optional" href="#fonctionnalites">Fonctionnalités</a>
+        <a class="optional" href="#securite">Sécurité</a>
+        <a href="#installation">Installation</a>
+        <a class="optional" href="https://github.com/l-sauvinet/nova_assistant">GitHub</a>
+        <span class="lang" role="group" aria-label="Langue">
+          <a href="./" aria-current="page">FR</a>
+          <a href="en/" hreflang="en" lang="en">EN</a>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container hero">
+      <div>
+        <h1>Ton assistant IA,<br><span class="gradient-text">directement sur ton PC.</span></h1>
+        <p class="lead">NOVA lit et range tes fichiers, lance des commandes avec ton accord, cherche sur le web, crée des PDF et des documents Word… Tu lui parles normalement, il agit sur ton ordinateur.</p>
+        <div class="actions">
+          <a class="button button-primary" href="https://github.com/l-sauvinet/nova_assistant/releases/latest/download/NOVA-setup.exe" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Télécharger NOVA pour Windows
+          </a>
+          <a class="button" href="#installation">Comment l'installer</a>
+        </div>
+        <p class="download-hint">Le téléchargement démarre tout de suite (45 Mo). Ouvre ensuite le fichier <code>NOVA-setup.exe</code> pour installer NOVA.</p>
+        <p class="meta">Gratuit et open source (licence MIT) · Windows 10 et 11, 64 bits · Nécessite un abonnement Claude Pro ou Max</p>
+      </div>
+      <div class="hero-orb">
+        <span class="orb orb-large" role="img" aria-label="L'orbe de NOVA"><span class="orb-glow"></span><span class="orb-core"></span><span class="orb-swirl"></span><span class="orb-shine"></span></span>
+      </div>
+    </div>
+
+    <section id="fonctionnalites">
+      <div class="container">
+        <h2 class="section-title">Ce que NOVA sait faire</h2>
+        <p class="section-intro">Demande-lui ce que tu veux en français : NOVA choisit le bon outil et le fait pour toi, au lieu de t'expliquer comment le faire.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg></div>
+            <h3>Tes fichiers</h3>
+            <p>Lire, chercher, ranger, renommer ou résumer tes documents. « Trie mes téléchargements par type », « que dit ce PDF ? ».</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/></svg></div>
+            <h3>Des commandes, avec ton accord</h3>
+            <p>Pour tout le reste, NOVA prépare une commande PowerShell et te la montre. Rien ne s'exécute sans que tu cliques sur « Autoriser ».</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Le web et la météo</h3>
+            <p>Recherches sur Internet, lecture de pages, météo de chez toi : NOVA va chercher l'information à jour.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></div>
+            <h3>Documents</h3>
+            <p>Un CV, une lettre, une fiche de révision ? NOVA crée de vrais fichiers PDF, Word, HTML ou CSV, avec un aperçu dans la conversation.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg></div>
+            <h3>Images et visuels</h3>
+            <p>Illustrations, fonds d'écran, logos, schémas ou petites pages interactives, directement dans le chat.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/></svg></div>
+            <h3>Chez toi, pas dans le cloud</h3>
+            <p>NOVA tourne sur ton PC. Tes conversations sont enregistrées sur ton ordinateur, et NOVA n'a ni serveur, ni compte, ni statistiques d'utilisation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="securite">
+      <div class="container">
+        <h2 class="section-title">Tu gardes la main</h2>
+        <p class="section-intro">Un assistant qui agit sur ton ordinateur doit être digne de confiance. NOVA a été conçu pour ne jamais agir dans ton dos.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Il demande avant d'agir</h3>
+            <p>Lancer une commande, supprimer, déplacer ou écraser un fichier, ouvrir un dossier qui n'est pas le sien : NOVA te pose toujours la question d'abord.</p>
+          </article>
+          <article class="card">
+            <h3>Protégé contre les pièges</h3>
+            <p>Une page web ou un fichier peut cacher des instructions destinées à l'IA. NOVA les repère, te prévient, et redemande ton accord pour toute action qui suit.</p>
+          </article>
+          <article class="card">
+            <h3>Fichiers dangereux signalés</h3>
+            <p>Avant d'ouvrir un programme, un script ou un fichier téléchargé, NOVA le fait analyser par Microsoft Defender et t'avertit.</p>
+          </article>
+          <article class="card">
+            <h3>Code ouvert</h3>
+            <p>Tout le code de NOVA est public sur GitHub : n'importe qui peut vérifier ce qu'il fait. Les installeurs sont construits par GitHub à partir de ce code.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="installation">
+      <div class="container">
+        <h2 class="section-title">Installation</h2>
+        <p class="section-intro">Compte une dizaine de minutes la première fois.</p>
+
+        <div class="requirements">
+          <div class="card"><strong>Windows 10 ou 11, 64 bits</strong>Avec une connexion Internet pendant l'installation.</div>
+          <div class="card"><strong>Un abonnement Claude Pro ou Max</strong>NOVA réfléchit grâce à Claude, l'IA d'Anthropic, via Claude Code. Un compte Claude gratuit ne suffit pas.</div>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Télécharger NOVA</h3>
+            <p><a href="https://github.com/l-sauvinet/nova_assistant/releases/latest/download/NOVA-setup.exe" download>Clique ici</a> ou sur le bouton « Télécharger » en haut de la page : le fichier <code>NOVA-setup.exe</code> se télécharge tout de suite. Si ton navigateur indique que le fichier est rarement téléchargé, choisis « Conserver ».</p>
+          </li>
+          <li>
+            <h3>Lancer l'installeur</h3>
+            <p>Ouvre le fichier téléchargé. L'installeur n'est pas encore signé, donc Windows affiche « Windows a protégé votre ordinateur » : clique sur <strong>Informations complémentaires</strong>, puis sur <strong>Exécuter quand même</strong>.</p>
+            <p class="note">C'est normal pour un logiciel récent non signé. Pour vérifier que ton fichier est bien l'original, compare son empreinte SHA-256 avec celle indiquée sur la page de la version (voir la FAQ).</p>
+          </li>
+          <li>
+            <h3>Installer Claude Code</h3>
+            <p>Ouvre <strong>Windows PowerShell</strong> depuis le menu Démarrer, colle cette commande officielle d'Anthropic et appuie sur Entrée :</p>
+            <div class="command"><code>irm https://claude.ai/install.ps1 | iex</code><button class="copy" type="button" data-copy="irm https://claude.ai/install.ps1 | iex">Copier</button></div>
+            <p>Ferme PowerShell, rouvre-le, tape <code>claude</code> et connecte-toi avec ton compte Claude dans la page qui s'ouvre.</p>
+          </li>
+          <li>
+            <h3>Ouvrir NOVA</h3>
+            <p>Lance NOVA depuis le menu Démarrer : il trouve ton compte Claude et c'est parti. Essaie par exemple « Qu'est-ce qu'il y a sur mon bureau ? ».</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">Questions fréquentes</h2>
+        <div class="faq">
+          <details>
+            <summary>NOVA est vraiment gratuit ?</summary>
+            <p>Oui : NOVA est gratuit et open source, sous licence MIT. En revanche, l'IA qui le fait réfléchir est celle de ton abonnement Claude (Pro ou Max), payé directement à Anthropic. NOVA ne touche rien dessus.</p>
+          </details>
+          <details>
+            <summary>Pourquoi Windows dit que l'application n'est pas reconnue ?</summary>
+            <p>Parce que l'installeur n'est pas encore signé numériquement : Windows ne connaît pas encore l'éditeur. Une demande de signature gratuite pour projets open source est en préparation. En attendant, tu peux vérifier que ton fichier est l'original : dans PowerShell, tape <code>Get-FileHash .\NOVA-setup.exe</code> dans ton dossier Téléchargements et compare le résultat avec l'empreinte SHA-256 affichée sur la <a href="https://github.com/l-sauvinet/nova_assistant/releases/latest">page de la dernière version</a>.</p>
+          </details>
+          <details>
+            <summary>L'installation de Claude Code affiche « le nom distant n'a pas pu être résolu »</summary>
+            <p>Ton réseau bloque sans doute claude.ai, ce qui est fréquent sur les réseaux d'entreprise ou d'école. Essaie depuis une autre connexion, par exemple ta box personnelle ou le partage de connexion de ton téléphone.</p>
+          </details>
+          <details>
+            <summary>NOVA peut-il faire des bêtises sur mon PC ?</summary>
+            <p>Toute action qui modifie ton ordinateur (commande, suppression, déplacement, écrasement d'un fichier) passe par une fenêtre de confirmation qui montre exactement ce qui va se passer. Tu peux toujours refuser. Lis bien ces fenêtres, surtout quand elles affichent un avertissement orange.</p>
+          </details>
+          <details>
+            <summary>Et sur Mac ou Linux ?</summary>
+            <p>Pour l'instant, seul Windows a un installeur. Les plus à l'aise peuvent lancer NOVA depuis son code source sur Linux ou macOS (voir le README sur GitHub).</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="confidentialite">
+      <div class="container policy">
+        <h2 class="section-title">Confidentialité</h2>
+        <p>NOVA n'a <strong>pas de serveur</strong> : il n'y a pas de compte NOVA, pas de statistiques d'utilisation, pas de publicité. Tes conversations, tes réglages et les fichiers que tu joins sont enregistrés uniquement sur ton ordinateur, dans le dossier <code>%USERPROFILE%\.nova</code>.</p>
+        <p>Pour fonctionner, NOVA contacte certains services, <strong>seulement quand c'est nécessaire à ce que tu lui demandes</strong> :</p>
+        <ul>
+          <li><strong>Anthropic</strong> (via Claude Code), pour faire réfléchir l'IA : tes messages, le contenu des fichiers que NOVA lit ou que tu joins, et les résultats de ses outils. C'est la <a href="https://www.anthropic.com/legal/privacy">politique de confidentialité d'Anthropic</a> qui s'applique.</li>
+          <li><strong>DuckDuckGo</strong>, quand NOVA fait une recherche web : les mots de la recherche.</li>
+          <li><strong>Les sites web</strong> que NOVA consulte pour toi, par exemple <strong>wttr.in</strong> pour la météo, avec les coordonnées de ta ville.</li>
+          <li><strong>OpenStreetMap (Nominatim)</strong> et <strong>ipinfo.io</strong>, quand tu demandes à NOVA de détecter ta position : tes coordonnées, ou ton adresse IP si Windows ne connaît pas ta position.</li>
+          <li><strong>Pollinations</strong>, quand tu demandes une image : la description de l'image.</li>
+        </ul>
+        <p>Ce site n'utilise ni cookies, ni outil de statistiques, ni service tiers : il est hébergé par o2switch, en France. Les fichiers d'installation sont hébergés par GitHub.</p>
+
+        <h3 id="code-signing-policy">Code signing policy — Politique de signature du code</h3>
+        <p>Les installeurs de NOVA sont construits automatiquement par GitHub Actions à partir du code public du dépôt, et leur empreinte SHA-256 est publiée avec chaque version. Ils ne sont pas encore signés : une demande de signature gratuite auprès de SignPath Foundation est en préparation.</p>
+        <p>Équipe du projet :</p>
+        <ul>
+          <li><strong>Auteur, relecteur et approbateur des versions</strong> : <a href="https://github.com/l-sauvinet">Lucas (l-sauvinet)</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Lucas · NOVA est un logiciel libre sous <a href="https://github.com/l-sauvinet/nova_assistant/blob/main/LICENSE">licence MIT</a></span>
+      <span><a href="https://github.com/l-sauvinet/nova_assistant">Code source</a> · <a href="#confidentialite">Confidentialité</a> · <a href="#code-signing-policy">Code signing policy</a> · <a href="en/" hreflang="en">English</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/copy.js" defer></script>
+</body>
+</html>
