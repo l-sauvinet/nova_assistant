@@ -1,8 +1,16 @@
-# o2switch (Apache / LiteSpeed): HTTPS only, and browser security headers.
+# o2switch (Apache / LiteSpeed): one address per page, HTTPS only, and browser security headers.
 
 RewriteEngine On
+
+# www.nova.sauv-web.fr and http:// both go to https://nova.sauv-web.fr (one address per page for search engines).
+RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
 RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^ https://nova.sauv-web.fr%{REQUEST_URI} [L,R=301]
+
+# /index.html and /en/index.html go to / and /en/. THE_REQUEST is the URL the visitor typed, so the
+# DirectoryIndex lookup Apache does internally for / cannot loop here.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^ /%1 [L,R=301]
 
 <IfModule mod_headers.c>
   Header always set Strict-Transport-Security "max-age=31536000"
