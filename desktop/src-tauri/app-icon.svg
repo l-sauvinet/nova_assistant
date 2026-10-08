@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><defs><radialGradient id="bg" cx="50%" cy="38%" r="75%"><stop offset="0" stop-color="#231a28"/><stop offset="1" stop-color="#0c0b0e"/></radialGradient><radialGradient id="core" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ffe2b8"/><stop offset=".26" stop-color="#ffb057"/><stop offset=".56" stop-color="#ff6b6b"/><stop offset=".88" stop-color="#c46bff"/><stop offset="1" stop-color="#d9a8ff"/></radialGradient><radialGradient id="glow"><stop offset="0" stop-color="#ff785a" stop-opacity=".55"/><stop offset=".55" stop-color="#ff6b6b" stop-opacity=".18"/><stop offset="1" stop-color="#ff6b6b" stop-opacity="0"/></radialGradient><radialGradient id="shine" cx="30%" cy="25%" r="40%"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
+<circle cx="512" cy="512" r="420" fill="url(#glow)"/>
+<circle cx="512" cy="512" r="270" fill="url(#core)"/>
+<circle cx="512" cy="512" r="270" fill="url(#shine)"/>
+</svg>
