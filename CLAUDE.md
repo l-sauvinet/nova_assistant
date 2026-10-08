@@ -110,7 +110,7 @@ missing data file, add the package to `COLLECT_ALL` in `packaging/build_engine.p
 Remaining:
 1. Test the installer on a machine without Python/uv/Rust pre-installed.
 2. Code signing (unsigned installers trigger Windows SmartScreen) — can wait for v1.
-3. Host the download (GitHub Releases — repo lives at `github.com/l-sauvinet/nova`).
+3. Host the download (GitHub Releases — repo lives at `github.com/l-sauvinet/nova_assistant`).
 
 Product constraint that stays true regardless of packaging: NOVA's default provider (`claude_code`) needs
 each user to have the Claude Code CLI installed and signed in themselves — there's no way around this for
