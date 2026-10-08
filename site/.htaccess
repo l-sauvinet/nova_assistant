@@ -13,3 +13,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 Options -Indexes
+
+# Accents and dashes must not depend on each tool guessing the encoding.
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .css .js
